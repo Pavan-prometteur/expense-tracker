@@ -28,15 +28,18 @@
         <div class="container1">
             <form action="">
                 <div class="tracker-input-grid">
-                    <input type="number" placeholder="enter income" class="js-income inc-input" required>
-                    <input type="number" placeholder="enter expense" class="js-expense exp-input" required>
+                    <select name="" id="js-type">
+                        <option value="income">income</option>
+                        <option value="expense">expense</option>
+                    </select>
+                    <input type="number" placeholder="income/expense" class="js-amount inc-input" required>
                     <input type="text" placeholder="enter description" class="js-desc desc-input" required>
                     <button type="submit" onclick="addTodo();" class="add-button">Add</button>
                 </div>
             </form>
             <div class="tracker-grid-heading">
-                <h5>Income</h5>
-                <h5>Expense</h5>
+                <h5>Type</h5>
+                <h5>Amount</h5>
                 <h5>Description</h5>
                 <h5>Delete</h5>
             </div>

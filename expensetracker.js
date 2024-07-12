@@ -12,10 +12,10 @@ function renderTrackerList() {
     let trackerListHTML2 ="";
     for (let i = 0; i < trackerList.length; i++) {
         const trackerObject = trackerList[i];
-        const { income, expense, description,totalIncome,totalExpense,balance} = trackerObject;
+        const {typeElement, amt, description,totalIncome,totalExpense,balance} = trackerObject;
         const html = `
-    <div class="item1">${income}</div>
-    <div class="item2">${expense}</div>
+    <div class="item1">${typeElement}</div>
+    <div class="item2">${amt}</div>
     <div class="item3">${description}</div>
     <button onclick="
     trackerList.splice(${i},1);
@@ -51,59 +51,62 @@ function renderTrackerList() {
 }
 
 function addTodo() {
+    let income=0;
+    let expense=0;
+    let balance=0;
 
-    let incomeElement = document.querySelector('.js-income');
+    let typeElement = document.getElementById('js-type').value;
+    console.log(typeElement);
 
-    let income;
+    let amountElement = document.querySelector('.js-amount');
+    let amt = Number(amountElement.value);
 
-    if(incomeElement.value){
-    income = Number(incomeElement.value);
-    totalIncome += income;
+
+    if(typeElement=='income'){
+        income=amt;
+        totalIncome += income;
     }
 
-    else{
-    income = 0;
-    totalIncome += income;
+    else if(typeElement=='expense'){
+        expense=amt;
+        totalExpense += expense;
     }
 
-    let expenseElement = document.querySelector('.js-expense')
-    
-    let expense;
-
-    if(expenseElement.value){
-    expense = Number(expenseElement.value);
-    totalExpense+=expense;
-    }
-
-    else{
-    expense = 0;
-    totalExpense+= expense;
-    }
-
+ 
     balance=totalIncome-totalExpense;
 
 
     let descElement = document.querySelector('.js-desc');
     let description = descElement.value;
 
-    // if (income != "" || expense != "" && description!="") {
-        trackerList.push({
-            income,
-            expense,
-            description,
-            totalIncome,
-            totalExpense,
-            balance
-        });
 
-        console.log(trackerList);
+    
+    if (typeElement == 'expense' && amt > balance) {
+        alert("invalid expense amount");
+    }
 
-        localStorage.setItem('exp1',JSON.stringify(trackerList));
+    else {
+        if (amt != "" && description != "") {
+            trackerList.push({
+                typeElement,
+                amt,
+                description,
+                totalIncome,
+                totalExpense,
+                balance
+            });
 
+            console.log(trackerList);
+
+            localStorage.setItem('exp1', JSON.stringify(trackerList));
+        }
+
+    }
+
+    
         renderTrackerList();
-        
-        incomeElement.value = '';
-        expenseElement.value = '';
+
+        amountElement.value = '';
         descElement.value ='';
-    // }
+   
 }
