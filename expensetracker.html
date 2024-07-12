@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./expensetracker.css">
+</head>
+
+<body>
+    <div class="tracker-container">
+        <div class="heading"><p>Expense Tracker</p></div>
+        <div class="container2">
+            <div>
+            <p>Total Income:</p>
+            <h5 class="total-income"></h5>
+            </div>
+            <div>
+            <p>Total Expense:</p>
+            <h5 class="total-expense"></h5>
+            </div>
+            <div>
+            <p>Current Balance:</p>
+            <h5 class="current-balance"></h5>
+            </div>
+        </div>
+        <div class="container1">
+            <form action="">
+                <div class="tracker-input-grid">
+                    <input type="number" placeholder="enter income" class="js-income inc-input" required>
+                    <input type="number" placeholder="enter expense" class="js-expense exp-input" required>
+                    <input type="text" placeholder="enter description" class="js-desc desc-input" required>
+                    <button type="submit" onclick="addTodo();" class="add-button">Add</button>
+                </div>
+            </form>
+            <div class="tracker-grid-heading">
+                <h5>Income</h5>
+                <h5>Expense</h5>
+                <h5>Description</h5>
+                <h5>Delete</h5>
+            </div>
+            <div class="js-tracker tracker-grid"></div>
+        </div>
+
+    </div>
+
+
+    
+
+    <script src="./expensetracker.js"></script>
+</body>
+
+</html>

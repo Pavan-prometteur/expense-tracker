@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial;
+    background-color:lightskyblue;
+}
+
+
+.tracker-container{
+    margin-top: 100px;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 50px;
+}
+
+
+.heading{
+    /* background-color: antiquewhite; */
+    margin-bottom:20px;
+    text-align: center;
+    font-size: 30px; 
+    font-weight: bold;
+    width: 800px;
+}
+
+.container1{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: antiquewhite; */
+}
+.container2{
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: antiquewhite; */
+}
+.container2 p{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.container2 h5{
+    height: 36px;
+    line-height: 36px;
+    font-size: 15px;
+}
+
+.current-balance{
+    height: 30px;
+    width: 200px;
+    border: 2px solid black;
+}
+.total-income{
+    height: 30px;
+    width: 200px;
+    border: 2px solid black;
+}
+.total-expense{
+    height: 30px;
+    width: 200px;
+    border: 2px solid black;
+}
+
+.tracker-input-grid,
+.tracker-grid,.tracker-grid-heading{
+    display:grid;
+    grid-template-columns:200px 150px 250px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.tracker-input-grid{
+    margin-bottom: 10px;
+    align-items:stretch;
+}
+
+.tracker-grid{
+    margin-bottom: 10px;
+}
+.tracker-grid-heading h5{
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+.item1,.item2,.item3,.item4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    border:2px solid black;
+    font-size: 15px;
+}
+
+.inc-input, .exp-input, .desc-input{
+    text-align: center;
+    font-size: 15px;
+    padding: 6px;
+}
+
+.add-button{
+    background-color: green;
+    color: white;
+    border: none;
+    font-size:15px ;
+    cursor: pointer;
+}
+
+.delete-tracker{
+    background-color: darkred;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 10px;
+}
